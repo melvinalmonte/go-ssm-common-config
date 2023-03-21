@@ -25,7 +25,7 @@ This file provides two functions: `WriteToSSM()` and `ReadFromSSM()`. These func
 
 ### main.go
 
-This file is an example code that calls the `WriteToSSM()` and `ReadFromSSM()` functions.
+Our driver code, it calls the `WriteToSSM()` and `ReadFromSSM()` functions.
 
 ## How to Use the Code
 
@@ -44,3 +44,5 @@ This file is an example code that calls the `WriteToSSM()` and `ReadFromSSM()` f
     ```
 
 The `main()` function writes a parameter to SSM and then reads the same parameter from SSM. You can modify the `paramStorePath` and `paramStoreValue` variables to write and read any parameter to and from SSM.
+
+Main takeaway, using the `sync.once` mutex we are able to efficiently run our code once helping us load our AWS and SSM config only once when needed.
